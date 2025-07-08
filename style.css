@@ -1,0 +1,250 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fdfdfd;
+  scroll-behavior: smooth;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 40px;
+  height: auto;
+}
+
+.logo-name {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.sun-icon {
+  width: 24px;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  padding: 4px 6px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff914d;
+}
+
+.nav-links a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff914d;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url(images/background.png.png) no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.hero-content {
+  z-index: 10;
+  color: #1d1d1d;
+}
+
+.profile {
+  width: 220px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 8px 14px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+/* Floating elements */
+.sun {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  width: 100px;
+  animation: floatsun 10s ease-in-out infinite;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+@keyframes floatsun {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.cloud {
+  position: absolute;
+  opacity: 0.6;
+  z-index: 1;
+  animation: floatclouds 18s ease-in-out infinite;
+  max-width: 100px;  /* Ensures no overflow on large screens */
+}
+
+.cloud1 {
+  top: 80px;
+  left: 60px;
+  width: 80px;
+}
+
+.cloud2 {
+  top: 80px;
+  right: 60px;
+  width: 80px;
+  animation-delay: 2s;
+}
+
+.cloud3 {
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  animation-delay: 4s;
+}
+
+@keyframes floatclouds {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(25px); }
+  100% { transform: translateX(0); }
+}
+
+/* Buttons */
+.btn {
+  background: #ff914d;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #ff722d;
+}
+
+/* Sections */
+.section {
+  padding: 80px 40px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Skills List */
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.skills-list li {
+  background: #ffe3d1;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Project Cards */
+.project-card {
+  background: #fff8f3;
+  padding: 24px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  max-width: 700px;
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.project-card p {
+  margin-bottom: 12px;
+  color: #555;
+}
